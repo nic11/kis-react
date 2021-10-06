@@ -11,12 +11,6 @@ class App extends React.Component {
     ];
   }
 
-  tick() {
-    for (const counter of this.counters) {
-      counter.tick();
-    }
-  }
-
   render() {
     return (
       <div className="App">
