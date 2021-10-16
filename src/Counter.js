@@ -25,7 +25,7 @@ class Counter extends React.Component {
     return (
       <div className="Counter">
         {this.props.description}<br />
-        {parseInt(this.props.start) + this.state.count}
+        {this.props.start + this.state.count}
       </div>
     );
   }
