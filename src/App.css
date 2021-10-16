@@ -1,5 +1,8 @@
 html, body, #root, .App {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App {
@@ -7,11 +10,14 @@ html, body, #root, .App {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  width: 322px;
 }
 
 .Counter {
   border: 1px solid #207720;
   text-align: center;
+  width: 100%;
 }
 
 .Counter .description {
