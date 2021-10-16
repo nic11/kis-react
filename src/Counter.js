@@ -11,6 +11,12 @@ class Counter extends React.Component {
       () => {
         if (this.state.count < 10) {
           this.setState({count: this.state.count + 1});
+          if (this.state.count == 10) {
+            clearInterval(this.timerId);
+          }
+        } else {
+          console.error(`bad invariant for timer {this.timerId}`);
+          clearInterval(this.timerId);
         }
       },
       1000
