@@ -30,8 +30,12 @@ class Counter extends React.Component {
   render() {
     return (
       <div className="Counter">
-        {this.props.description}<br />
-        {this.props.start + this.state.count}
+        <div className="description">
+          {this.props.description}
+        </div>
+        <div className="num">
+          {this.props.start + this.state.count}
+        </div>
       </div>
     );
   }

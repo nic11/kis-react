@@ -11,4 +11,15 @@ html, body, #root, .App {
 
 .Counter {
   border: 1px solid #207720;
+  text-align: center;
+}
+
+.Counter .description {
+  margin: 0.5em;
+}
+
+.Counter .num {
+  margin: 0.5em;
+  font-weight: bold;
+  font-size: 1.5em;
 }
