@@ -1,17 +1,11 @@
 import React from 'react';
 
 class ContactsForm extends React.Component {
-  handleUpdate(updatedFields) {
-    const newState = { ...this.state, ...updatedFields };
-    this.setState(newState);
-    this.props.onUpdate(newState);
-  }
-
   makeField(fieldDescription, fieldName) {
     return (
       <div>
         {fieldDescription + ': '}
-        <input type="text" onChange={ (e) => this.handleUpdate({ [fieldName]: e.target.value }) } />
+        <input type="text" onChange={ (e) => this.props.onUpdate({ [fieldName]: e.target.value }) } />
       </div>
     );
   }
