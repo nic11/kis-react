@@ -1,15 +1,10 @@
 import React from 'react';
 
 class ContactsForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.onUpdate = props.onUpdate;
-  }
-
   handleUpdate(updatedFields) {
     const newState = { ...this.state, ...updatedFields };
     this.setState(newState);
-    this.onUpdate(newState);
+    this.props.onUpdate(newState);
   }
 
   makeField(fieldDescription, fieldName) {
