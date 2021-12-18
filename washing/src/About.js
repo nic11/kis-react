@@ -95,10 +95,12 @@ function About() {
   );
 }
 
-export default {
+const aboutRoute = {
   title: 'О сайте',
   menuKey: 'about',
   route: '/about',
   Icon: UserOutlined,
   Content: About,
 };
+
+export default aboutRoute;

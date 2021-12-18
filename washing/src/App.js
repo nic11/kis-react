@@ -15,8 +15,6 @@ import homeRoute from './Home';
 import aboutRoute from './About';
 import enlistRoute from './Enlist';
 
-console.log(aboutRoute);
-
 const ROUTES = [
   homeRoute,
   aboutRoute,
