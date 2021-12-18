@@ -1,24 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import { React } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from 'react-router-dom';
+import {
+  Layout,
+  Menu,
+} from 'antd';
+
+import homeRoute from './Home';
+import aboutRoute from './About';
+import enlistRoute from './Enlist';
+
+console.log(aboutRoute);
+
+const ROUTES = [
+  homeRoute,
+  aboutRoute,
+  enlistRoute,
+];
+
+function findRouteByLocation(locationPathname) {
+  for (const route of ROUTES) {
+    if (locationPathname === route.route) {
+      return route;
+    }
+  }
+  throw new Error(`unknown route for location: ${locationPathname}`);
+}
+
+function AppLayout(props) {
+  const location = useLocation();
+  const route = findRouteByLocation(location.pathname);
+  return (
+    <Layout style={{ minHeight: '100vh' }}>
+      <Layout.Sider collapsible width='300px'>
+        <Menu theme='dark' defaultSelectedKeys={[route.menuKey]} mode='inline'>
+          {ROUTES.map((route) =>
+            <Menu.Item key={route.menuKey} icon={<route.Icon />}>
+              <Link to={route.route}>
+                {route.title}
+              </Link>
+            </Menu.Item>
+          )}
+        </Menu>
+      </Layout.Sider>
+      <Layout.Content className="main-container">
+        <Routes>
+          {ROUTES.map((route) =>
+            <Route key={route.menuKey} path={route.route} element={<route.Content />} />
+          )}
+        </Routes>
+      </Layout.Content>
+    </Layout>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppLayout />
+    </Router>
   );
 }
 
