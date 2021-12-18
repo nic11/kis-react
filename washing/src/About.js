@@ -74,7 +74,7 @@ function About() {
               cover={<Image src={ghData.avatarUrl} />}
           >
             <Card.Meta
-                title={ghData.username}
+                title={ghData.name || ghData.username}
                 description={<>Bio: {ghData.bio || 'его нет'}</>}
               />
           </Card>
