@@ -2,6 +2,7 @@
   "name": "kis-react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nic11.github.io/kis-react/",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@octokit/rest": "^18.12.0",
