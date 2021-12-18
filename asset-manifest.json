@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kis-react/static/css/main.25176265.css",
+    "main.js": "/kis-react/static/js/main.0a008806.js",
+    "index.html": "/kis-react/index.html",
+    "main.25176265.css.map": "/kis-react/static/css/main.25176265.css.map",
+    "main.0a008806.js.map": "/kis-react/static/js/main.0a008806.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25176265.css",
+    "static/js/main.0a008806.js"
+  ]
+}
